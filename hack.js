@@ -5,12 +5,9 @@ const https = require('https');
 const app = express();
 const port = 3000;
 
-const playerData = {
-  name: 'MISLAV ORšIC',
-  id: '67330038',
-  minPrice: 24000,
-  maxPrice: 28000,
-}
+var fs = require('fs');
+
+const playersData = JSON.parse(fs.readFileSync('players.json', 'utf8'));
 
 const sendPushNotification = (pushTitle, pushMessage) => {
   var apiKey = 'SQXMWBN1ZE2G604XPDK59GDK7';
@@ -47,25 +44,29 @@ const sendPushNotification = (pushTitle, pushMessage) => {
     console.log(e);
     Log(e);
   });
-}
+};
 
 const interval = () => {
-  axios
-    .get(`https://www.futbin.com/21/playerPrices?player=${playerData.id}&rids=221174,50552822,84107254&_=1616884302859`)
-    .then((res) => {
-      const dirtyPrice = res.data[playerData.id].prices.pc.LCPrice;
-      const clearPrice = Number(dirtyPrice.replace(',', ''));
-      
-      if (clearPrice <= playerData.minPrice) {
-        // Notify to buy
-        sendPushNotification(`${playerData.name} - BUY!`, 'The price now is: ' + dirtyPrice);
-      } else if (clearPrice >= playerData.maxPrice) {
-        // Notify to sell
-        sendPushNotification(`${playerData.name} - SELL!`, 'The price now is: ' + dirtyPrice);
-      }
-      
-      console.log(clearPrice);
-    });
+  playersData.map((playerData) => {
+    axios
+      .get(
+        `https://www.futbin.com/21/playerPrices?player=${playerData.id}&rids=221174,50552822,84107254&_=1616884302859`
+      )
+      .then((res) => {
+        const dirtyPrice = res.data[playerData.id].prices.pc.LCPrice;
+        const clearPrice = Number(dirtyPrice.replace(',', ''));
+
+        if (clearPrice <= playerData.minPrice) {
+          // Notify to buy
+          sendPushNotification(`${playerData.name} - BUY!`, 'The price now is: ' + dirtyPrice);
+        } else if (clearPrice >= playerData.maxPrice) {
+          // Notify to sell
+          sendPushNotification(`${playerData.name} - SELL!`, 'The price now is: ' + dirtyPrice);
+        }
+
+        console.log(clearPrice);
+      });
+  });
 };
 
 setInterval(interval, 5 * 60 * 1000);
