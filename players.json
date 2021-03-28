@@ -16,5 +16,17 @@
     "id": "67299347",
     "minPrice": 10000,
     "maxPrice": 18000
+  },
+  {
+    "name": "WISSAM BEN YEDDER",
+    "id": "199451",
+    "minPrice": 9900,
+    "maxPrice": 17000
+  },
+  {
+    "name": "JOE GOMEZ",
+    "id": "225100",
+    "minPrice": 9800,
+    "maxPrice": 15000
   }
 ]

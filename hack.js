@@ -50,7 +50,7 @@ const interval = () => {
   playersData.map((playerData) => {
     axios
       .get(
-        `https://www.futbin.com/21/playerPrices?player=${playerData.id}&rids=221174,50552822,84107254&_=1616884302859`
+        `https://www.futbin.com/21/playerPrices?player=${playerData.id}`
       )
       .then((res) => {
         const dirtyPrice = res.data[playerData.id].prices.pc.LCPrice;
