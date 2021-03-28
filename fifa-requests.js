@@ -45,5 +45,5 @@ const getPlayerDetails = (maskedDefId, maxb, rare = null, SID) => {
 
 module.exports = {
   getPlayerDetails,
-  makeBid,
+  makeBid
 };
