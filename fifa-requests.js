@@ -32,7 +32,7 @@ const getPlayerDetails = (maskedDefId, maxb, rare = null, SID) => {
     })
     .then((res) => {
       console.log(res);
-      if (res.data.auctionInfo?.length) {
+      if (res.data.auctionInfo && res.data.auctionInfo.length) {
         res.data.auctionInfo.map(auc => {
           makeBid(auc.buyNowPrice, auc.tradeId, SID);
         });
