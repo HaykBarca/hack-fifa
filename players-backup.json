@@ -1,5 +1,13 @@
 [
   {
+    "name": "MISLAV ORšIC",
+    "id": "67330038",
+    "maskedDefId": "221174",
+    "rare": "SP",
+    "minPrice": 20000,
+    "maxPrice": 28000
+  },
+  {
     "name": "KINGSLEY COMAN",
     "id": "213345",
     "maskedDefId": "213345",
