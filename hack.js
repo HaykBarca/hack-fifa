@@ -40,7 +40,7 @@ const checkPrcicesViaEa = async () => {
   });
 }
 
-setInterval(checkPrcicesViaEa, 3 * 60 * 1000);
+setInterval(checkPrcicesViaEa, 0.1 * 60 * 1000);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');

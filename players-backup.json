@@ -32,6 +32,14 @@
     "maxPrice": 17000
   },
   {
+    "name": "MARCUS RASHFORD",
+    "id": "231677",
+    "maskedDefId": "231677",
+    "rare": null,
+    "minPrice": 18000,
+    "maxPrice": 30000
+  },
+  {
     "name": "JOE GOMEZ",
     "id": "225100",
     "maskedDefId": "225100",

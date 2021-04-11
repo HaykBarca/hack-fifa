@@ -1,34 +1,10 @@
 [
   {
-    "name": "KINGSLEY COMAN",
-    "id": "213345",
-    "maskedDefId": "213345",
+    "name": "MARCUS RASHFORD",
+    "id": "231677",
+    "maskedDefId": "231677",
     "rare": null,
-    "minPrice": 9500,
-    "maxPrice": 17000
-  },
-  {
-    "name": "DOUGLAS COSTA",
-    "id": "67299347",
-    "maskedDefId": "190483",
-    "rare": null,
-    "minPrice": 10000,
-    "maxPrice": 18000
-  },
-  {
-    "name": "WISSAM BEN YEDDER",
-    "id": "199451",
-    "maskedDefId": "199451",
-    "rare": null,
-    "minPrice": 9900,
-    "maxPrice": 17000
-  },
-  {
-    "name": "JOE GOMEZ",
-    "id": "225100",
-    "maskedDefId": "225100",
-    "rare": null,
-    "minPrice": 9800,
-    "maxPrice": 15000
+    "minPrice": 18000,
+    "maxPrice": 30000
   }
 ]
